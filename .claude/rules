@@ -1,0 +1,11 @@
+- TypeScript strict mode at all times
+- All CSS values must reference design tokens — never hardcode hex or px
+- Server Components by default; 'use client' requires a justification comment
+- Icon source: pixelarticons only — do not install other icon libraries
+- Icon color via CSS class or var — never via the fill attribute
+- Icon size must be 24, 48, 72, or 96px
+- Section components receive typed props — no inline or hardcoded content
+- Token names in CSS must mirror Figma variable names (kebab-case)
+- Check for an existing component before creating a new one
+- Figma MCP 7-step workflow is required for every component and section
+- Document any visual deviation from Figma in a code comment

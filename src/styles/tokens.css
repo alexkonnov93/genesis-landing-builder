@@ -1,0 +1,90 @@
+/* Design tokens — brand palette, scale, and semantic mappings.
+   Source of truth: Figma Variables. */
+
+:root {
+  /* ─── Colors ─── */
+  --color-black: #0a0a0a;
+  --color-black-02: #121212;
+  --color-dark-grey: #333333;
+  --color-med-grey: #808080;
+  --color-grey: #adadad;
+  --color-light-grey: #dbdbdb;
+  --color-white: #ffffff;
+  --color-primary-orange: #ff6e06;
+  --color-light-orange: #e3b799;
+
+  /* ─── Semantic colors ─── */
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: var(--color-grey);
+  --color-text-muted: var(--color-med-grey);
+  --color-text-inverse: var(--color-black);
+  --color-text-accent: var(--color-primary-orange);
+
+  --color-bg-primary: var(--color-black);
+  --color-bg-secondary: var(--color-black-02);
+  --color-bg-surface: var(--color-dark-grey);
+  --color-bg-muted: var(--color-light-grey);
+  --color-bg-inverse: var(--color-white);
+  --color-bg-glass: rgba(255, 255, 255, 0.1);
+
+  --color-action-default: var(--color-primary-orange);
+  --color-action-hover: var(--color-light-orange);
+
+  --color-border-default: var(--color-dark-grey);
+  --color-border-subtle: rgba(255, 255, 255, 0.16);
+  --color-border-muted: var(--color-med-grey);
+  --color-border-accent: var(--color-primary-orange);
+
+  /* ─── Font sizes ─── */
+  --font-size-h1: 62px;
+  --font-size-h2: 52px;
+  --font-size-h3: 36px;
+  --font-size-h4: 26px;
+  --font-size-h5: 22px;
+  --font-size-18: 18px;
+  --font-size-16: 16px;
+  --font-size-14: 14px;
+  --font-size-13: 13px;
+
+  /* ─── Font weights ─── */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  /* ─── Line heights ─── */
+  --line-height-none: 1.04;
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.4;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+
+  /* ─── Letter spacing ─── */
+  --letter-spacing-h1: -5px;
+  --letter-spacing-h2: -4px;
+  --letter-spacing-tight: -0.32px;
+  --letter-spacing-body: -0.36px;
+  --letter-spacing-caps: 0.26px;
+
+  /* ─── Spacing ─── */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+
+  /* ─── Border radius ─── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* ─── Effects ─── */
+  --blur-sm: 8px;
+  --blur-md: 16px;
+}
