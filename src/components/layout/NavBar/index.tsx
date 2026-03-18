@@ -20,37 +20,40 @@ interface NavBarProps {
 
 export function NavBar({ links, actions }: NavBarProps) {
   return (
-    <nav className="navbar">
-      <div className="navbar__left">
-        <a href="/" className="navbar__logo">
-          <Image
-            src="/images/logo-computing.svg"
-            alt="Genesis Computing"
-            width={149}
-            height={54}
-            priority
-          />
-        </a>
-        <div className="navbar__links">
-          {links.map((link) => (
-            <a key={link.label} href={link.href} className="navbar__link">
-              {link.label}
-            </a>
+    <>
+      <nav className="navbar">
+        <div className="navbar__left">
+          <a href="/" className="navbar__logo">
+            <Image
+              src="/images/logo-computing.svg"
+              alt="Genesis Computing"
+              width={149}
+              height={54}
+              priority
+            />
+          </a>
+          <div className="navbar__links">
+            {links.map((link, i) => (
+              <a key={i} href={link.href} className="navbar__link">
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="navbar__actions">
+          {actions.map((action) => (
+            <Button
+              key={action.label}
+              variant={action.variant}
+              size="sm"
+              href={action.href}
+            >
+              {action.label}
+            </Button>
           ))}
         </div>
-      </div>
-      <div className="navbar__actions">
-        {actions.map((action) => (
-          <Button
-            key={action.label}
-            variant={action.variant}
-            size="sm"
-            href={action.href}
-          >
-            {action.label}
-          </Button>
-        ))}
-      </div>
-    </nav>
+      </nav>
+      <div className="navbar__spacer" />
+    </>
   );
 }

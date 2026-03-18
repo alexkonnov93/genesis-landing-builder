@@ -32,7 +32,7 @@
 }
 
 .btn--primary:hover {
-  background-color: var(--color-action-hover);
+  background-color: var(--color-action-primary-hover);
 }
 
 /* Variant: Secondary */

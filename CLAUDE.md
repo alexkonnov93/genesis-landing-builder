@@ -26,14 +26,35 @@ Component-specific values live in each component's co-located CSS file, referenc
 
 ### Component Patterns
 
-- **UI primitives** in `src/components/ui/` — Button (polymorphic button/link, 4 variants × 2 sizes), Icon (pixelarticons wrapper)
-- **Layout** in `src/components/layout/` — NavBar (typed links + actions props)
-- **Sections** in `src/components/sections/` — one folder per section, each a Server Component with typed props and co-located CSS
+- **UI primitives** in `src/components/ui/` — Button (polymorphic button/link, 4 variants × 2 sizes), Card (icon + title + description), Icon (pixelarticons wrapper)
+- **Layout** in `src/components/layout/` — NavBar (fixed, blurred bg on scroll), Footer (address, socials, legal links)
+- **Sections** in `src/components/sections/` — one folder per section, each with typed props and co-located CSS
 - Barrel exports: `src/components/ui/index.ts`, `src/components/sections/index.ts`, `src/components/layout/index.ts`
 - Path alias: `@/*` → `./src/*`
 - CSS uses BEM naming: `.block__element--modifier`
 
+### Animations
+
+framer-motion is used for scroll-triggered and on-load animations. Sections that use animations must have `'use client'` with a justification comment. Current animated sections: Hero (word-by-word blur reveal), Deployments (staggered logo fade-in), Integrations (CSS marquee scroll).
+
+Shared easing curve: `[0.25, 0.1, 0.25, 1]`
+
+### Section Layout Convention
+
+Most sections follow this CSS structure for consistent 1180px content width:
+```css
+.section__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 130px;
+}
+```
+
+The `DividerSection` accepts an optional `height` prop (default 60px) and renders dashed vertical border lines. It is reused as a spacer between sections and inside the Footer.
+
 ### Skills
+
+**`/build-landing-page`** — Use when creating new sections, components, or full pages without a Figma reference. Loads the Genesis design system rules (colors, typography, spacing, layout, motion) to ensure visual consistency. References `STYLE_GUIDE.md` for the full design audit including section-by-section visual observations.
 
 **`/figma:implement-design`** — Use when implementing any component or section from Figma. Takes a Figma URL and follows the 7-step workflow: parse URL → fetch context → capture screenshot → download assets → translate to project conventions → achieve 1:1 parity → validate. After each implementation, review and update `tokens.css` if new values appear.
 
@@ -45,6 +66,10 @@ The standard workflow for any Figma implementation is: `/figma:implement-design`
 
 `pixelarticons` is the only icon library. Use the `<Icon>` wrapper (`src/components/ui/Icon/`). Colors via CSS class/var only — never `fill` attribute. Sizes must be multiples of 24 (24, 48, 72, 96).
 
+### SVG Assets
+
+SVGs exported from Figma often use `fill="var(--fill-0, white)"` which does not work when served via `<img>` or Next.js `<Image>`. Always replace CSS var fills with literal color values after downloading.
+
 ### Key Rules
 
 - Server Components by default; `'use client'` requires a justification comment
@@ -53,14 +78,7 @@ The standard workflow for any Figma implementation is: `/figma:implement-design`
 - Section components receive typed props — no inline or hardcoded content
 - Document any visual deviation from Figma in a code comment
 - Check for an existing component before creating a new one
-
-## Build Phases
-
-1. ✅ Design tokens — `src/styles/tokens.css`
-2. ✅ Button (4 variants × 2 sizes), NavBar — via Figma MCP
-3. ⬜ Wire pixelarticons
-4. ✅ Hero section — via Figma MCP; remaining sections pending
-5. ⬜ Generate SKILL-brand-guidelines.md
+- When mapping over items with potentially duplicate labels, use index-based keys
 
 ## Figma
 

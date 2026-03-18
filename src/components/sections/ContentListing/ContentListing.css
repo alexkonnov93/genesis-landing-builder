@@ -1,0 +1,101 @@
+.content-listing {
+  width: 100%;
+}
+
+.content-listing__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 130px;
+}
+
+.content-listing__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-listing__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px var(--spacing-10) var(--spacing-12);
+  border-left: 1px dashed var(--color-border-default);
+  border-right: 1px dashed var(--color-border-default);
+}
+
+.content-listing__title {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-none);
+  letter-spacing: var(--letter-spacing-h2);
+  color: var(--color-text-primary);
+  text-align: center;
+  flex: 1;
+}
+
+.content-listing__grid {
+  display: flex;
+  gap: var(--spacing-5);
+  height: 372px;
+}
+
+.content-listing__card {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  height: 372px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  overflow: hidden;
+}
+
+.content-listing__thumbnail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 220px;
+  background-color: var(--color-dark-grey);
+  overflow: hidden;
+}
+
+.content-listing__thumbnail img {
+  object-fit: cover;
+}
+
+.content-listing__thumbnail-placeholder {
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-caps);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-feature-settings: 'dlig' 1;
+}
+
+.content-listing__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: var(--spacing-8) var(--spacing-8) 36px;
+}
+
+.content-listing__card-tag {
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-caps);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-feature-settings: 'dlig' 1;
+}
+
+.content-listing__card-title {
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-light-grey);
+  font-feature-settings: 'dlig' 1;
+}

@@ -1,4 +1,8 @@
+// 'use client' required for framer-motion animations
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import './Deployments.css';
 
 interface Logo {
@@ -15,6 +19,16 @@ interface DeploymentsProps {
   logos: Logo[];
 }
 
+const ease = [0.25, 0.1, 0.25, 1] as const;
+
+const logoVariants = {
+  hidden: { opacity: 0 },
+  visible: (i: number) => ({
+    opacity: 1,
+    transition: { duration: 0.6, ease, delay: 0.15 + i * 0.12 },
+  }),
+};
+
 export function DeploymentsSection({ tag, headline, description, logos }: DeploymentsProps) {
   return (
     <section className="deployments">
@@ -27,15 +41,23 @@ export function DeploymentsSection({ tag, headline, description, logos }: Deploy
           </div>
         </div>
         <div className="deployments__logos">
-          {logos.map((logo) => (
-            <div key={logo.alt} className="deployments__logo">
+          {logos.map((logo, i) => (
+            <motion.div
+              key={logo.alt}
+              className="deployments__logo"
+              variants={logoVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-50px' }}
+              custom={i}
+            >
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 width={logo.width}
                 height={logo.height}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
