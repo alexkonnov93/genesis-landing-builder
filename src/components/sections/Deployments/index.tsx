@@ -15,7 +15,7 @@ interface Logo {
 interface DeploymentsProps {
   tag: string;
   headline: string;
-  description: string;
+  description?: string;
   logos: Logo[];
 }
 
@@ -37,7 +37,7 @@ export function DeploymentsSection({ tag, headline, description, logos }: Deploy
           <p className="deployments__tag">{tag}</p>
           <div className="deployments__text">
             <h2 className="deployments__heading">{headline}</h2>
-            <p className="deployments__description">{description}</p>
+            {description && <p className="deployments__description">{description}</p>}
           </div>
         </div>
         <div className="deployments__logos">

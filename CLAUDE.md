@@ -62,6 +62,8 @@ The `DividerSection` accepts an optional `height` prop (default 60px) and render
 
 The standard workflow for any Figma implementation is: `/figma:implement-design` → build check → `/validate-design`.
 
+**`/critique-page`** — Visual design critique from the perspective of a top-tier web designer. Captures full-page screenshots and evaluates purely by what's visible — no source code reading during critique. Judges against world-class benchmarks (Linear, Vercel, Stripe) across five areas: first impression, visual hierarchy & composition, typography & color, layout & craft, and conversion design. Outputs a graded report with specific recommendations. Source code is only read if the user asks to fix findings.
+
 ### Icons
 
 `pixelarticons` is the only icon library. Use the `<Icon>` wrapper (`src/components/ui/Icon/`). Colors via CSS class/var only — never `fill` attribute. Sizes must be multiples of 24 (24, 48, 72, 96).

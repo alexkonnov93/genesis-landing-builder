@@ -13,9 +13,15 @@ interface CtaProps {
   description: string;
   bgSrc: string;
   actions: CtaAction[];
+  /** Uppercase tag above headline */
+  eyebrow?: string;
+  /** Event date/time line below description */
+  eventDetails?: string;
+  /** Small note below CTAs */
+  footerNote?: string;
 }
 
-export function CtaSection({ headline, description, bgSrc, actions }: CtaProps) {
+export function CtaSection({ headline, description, bgSrc, actions, eyebrow, eventDetails, footerNote }: CtaProps) {
   return (
     <section className="cta">
       <div className="cta__inner">
@@ -24,9 +30,11 @@ export function CtaSection({ headline, description, bgSrc, actions }: CtaProps) 
             <Image src={bgSrc} alt="" fill sizes="1180px" />
           </div>
           <div className="cta__content">
+            {eyebrow && <p className="cta__eyebrow">{eyebrow}</p>}
             <div className="cta__text">
               <h2 className="cta__title">{headline}</h2>
               <p className="cta__description">{description}</p>
+              {eventDetails && <p className="cta__event-details">{eventDetails}</p>}
             </div>
             <div className="cta__actions">
               {actions.map((action) => (
@@ -35,6 +43,7 @@ export function CtaSection({ headline, description, bgSrc, actions }: CtaProps) 
                 </Button>
               ))}
             </div>
+            {footerNote && <p className="cta__footer-note">{footerNote}</p>}
           </div>
         </div>
       </div>

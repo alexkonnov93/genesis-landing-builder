@@ -6,3 +6,8 @@ export { DemoSection } from './Demo';
 export { ContentListingSection } from './ContentListing';
 export { DividerSection } from './Divider';
 export { CtaSection } from './Cta';
+export { SocialProofSection } from './SocialProof';
+export { RegistrationFormSection } from './RegistrationForm';
+export { ProblemStatementSection } from './ProblemStatement';
+export { TabbedContentSection } from './TabbedContent';
+export { HostSection } from './Host';

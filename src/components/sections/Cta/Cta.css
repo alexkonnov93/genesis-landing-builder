@@ -62,7 +62,34 @@
   font-feature-settings: 'dlig' 1;
 }
 
+.cta__eyebrow {
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-caps);
+  text-transform: uppercase;
+  color: var(--color-light-orange);
+  font-feature-settings: 'dlig' 1;
+}
+
+.cta__event-details {
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+}
+
 .cta__actions {
   display: flex;
   gap: 6px;
+}
+
+.cta__footer-note {
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-muted);
+  font-feature-settings: 'dlig' 1;
 }
